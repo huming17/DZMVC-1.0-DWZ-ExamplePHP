@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的应用</title>
+<link rel="stylesheet" href="themes/health.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.3.min.css" />
+<script src="themes/js/jquery-1.11.1.min.js"></script>
+<script src="themes/js/jquery.mobile-1.4.3.min.js"></script>
+<script src="themes/js/jquery.json.min.js"></script>
+<script src="themes/js/xuhm.js"></script>
+<script src="themes/js/xuhm_ext.js"></script>
+<script>
+		$(function(){
+			$("[data-role='navbar']").navbar();
+			$("[data-role='header'], [data-role='footer']").toolbar();
+		});
+		$(document).delegate("#page-content", "pageinit", function() {
+		});
+	</script>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <h1></h1>
+</div>
+<!-- /header -->
+
+<div data-role="page" class="health-page">
+	<div class="ui-content jqm-content jqm-fullwidth" role="main" id="page-content">
+    	<span id="user_score_earn" style="display:none;">
+            <a href="#" onClick="earn_score(1);" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a">
+                点击赚积分
+            </a>
+        </span>
+        <div id="user_popuplogin_score" style="display:block;">
+			<a href="#popupLogin_score" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" aria-haspopup="true" aria-owns="popupLogin" aria-expanded="false" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">请先登录</a>
+        </div>
+        <!--登录弹窗start-->
+        <div data-role="popup" id="popupLogin_score" data-theme="a" class="ui-corner-all">
+        <form>
+            <div style="padding:10px 20px;">
+                <h3>请登录</h3>
+                <label for="un" class="ui-hidden-accessible">用户名:</label>
+                <input type="text" name="username" id="un" value="" placeholder="用户名" data-theme="a">
+                <label for="pw" class="ui-hidden-accessible">密码:</label>
+                <input type="password" name="pass" id="pw" value="" placeholder="密码" data-theme="a">
+                <button type="button" onClick="check_login_money(1);" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">登录</button>
+            </div>
+        </form>
+        </div>
+        <!--登录弹窗end-->
+    	<script>
+		//DEBUG jqm ajax 切换需初始化弹窗
+		$(function(){
+			check_login_money('');
+		});
+		function check_login_money(pop_id){
+			var check_login_result = check_login();
+			if(1==check_login_result){
+				$('#user_score_earn').show();
+				$('#user_popuplogin_score').hide();
+				if(pop_id){
+					$("#popupLogin_score").popup("close");
+				}
+			}else{
+				$('#user_score_earn').hide();
+				$('#user_popuplogin_score').show();
+			}
+		}
+        </script>
+	</div>
+  <!-- /content --> 
+
+</div>
+<!-- /page -->
+
+<div data-role="footer" data-position="fixed" data-tap-toggle="true" data-theme="a">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="index.html" data-prefetch="true" data-transition="none" data-icon="home">首页</a></li>
+      <li><a href="content.html" data-prefetch="true" data-transition="slide" data-icon="tag">温故知新</a></li>
+	  <li><a href="beishu.html" data-prefetch="true" data-transition="slide" data-icon="tag">背书练习</a></li>
+      <li><a href="personal.html" data-prefetch="true" data-transition="slide" data-icon="gear">我的信息</a></li>
+    </ul>
+  </div>
+  <!-- /navbar --> 
+</div>
+<!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的应用</title>
+<link rel="stylesheet" href="themes/health.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.3.min.css" />
+<script src="themes/js/jquery-1.11.1.min.js"></script>
+<script src="themes/js/jquery.mobile-1.4.3.min.js"></script>
+<script src="themes/js/jquery.json.min.js"></script>
+<script src="themes/js/xuhm.js"></script>
+<script src="themes/js/xuhm_ext.js"></script>
+<script>
+		$(function(){
+			$("[data-role='navbar']").navbar();
+			$("[data-role='header'], [data-role='footer']").toolbar();
+		});
+		$(document).delegate("#page-content", "pageinit", function() {
+		});
+	</script>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <h1></h1>
+</div>
+<!-- /header -->
+
+<div data-role="page" class="health-page">
+	<div class="ui-content jqm-content jqm-fullwidth" role="main" id="page-content">
+            <a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="themes/images/app/paris.jpg" alt="" style="width:30%"></a>
+            <a href="#popup2" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="themes/images/app/sydney.jpg" alt="" style="width:30%"></a>
+            <a href="#popup3" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="themes/images/app/newyork.jpg" alt="" style="width:30%"></a>
+            <div data-role="popup" id="popup1" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                Close
+                </a>
+                <img class="popphoto" src="themes/images/app/paris.jpg" style="max-height:512px;" alt="">
+            </div>
+            <div data-role="popup" id="popup2" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                Close
+                </a>
+                <img class="popphoto" src="themes/images/app/sydney.jpg" style="max-height:512px;" alt="">
+            </div>
+            <div data-role="popup" id="popup3" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                Close
+                </a>
+                <img class="popphoto" src="themes/images/app/newyork.jpg" style="max-height:512px;" alt="">
+            </div>
+	</div>
+  <!-- /content --> 
+</div>
+<!-- /page -->
+<!--data-tap-toggle = false 表示底部菜单 不消失 固定显示-->
+<div data-role="footer" data-position="fixed" data-tap-toggle="true" data-theme="a">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="index.html" data-prefetch="true" data-transition="none" data-icon="home">首页</a></li>
+      <li><a href="content.html" data-prefetch="true" data-transition="slide" data-icon="tag">温故知新</a></li>
+	  <li><a href="beishu.html" data-prefetch="true" data-transition="slide" data-icon="tag">背书练习</a></li>
+      <li><a href="personal.html" data-prefetch="true" data-transition="slide" data-icon="gear">我的信息</a></li>
+    </ul>
+  </div>
+  <!-- /navbar --> 
+</div>
+<!-- /footer -->
+</body>
+</html>
