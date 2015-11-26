@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的应用</title>
+<link rel="stylesheet" href="themes/health.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.3.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.listview.css" />
+<script src="themes/js/jquery-1.11.1.min.js"></script>
+<script src="themes/js/jquery.mobile-1.4.3.min.js"></script>
+<script src="themes/js/jquery.json.min.js"></script>
+<script src="themes/js/xuhm.js"></script>
+<script src="themes/js/xuhm_ext.js"></script>
+<script>
+	$(function(){
+		$("[data-role='navbar']").navbar();
+		$("[data-role='header'], [data-role='footer']").toolbar();
+	});
+	$(document).delegate("#page-content", "pageinit", function() {
+	});
+</script>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <h1></h1>
+</div>
+<!-- /header -->
+
+<div data-role="page" class="health-page">
+	<div class="ui-content jqm-content jqm-fullwidth" role="main" id="page-content">
+    	<script>
+		get_cate();
+		</script>
+        <ul data-role="listview" id="cate_list" class="ui-listview"></ul>
+        <!--登录弹窗start-->
+        <!--登录弹窗end-->
+	</div>
+  <!-- /content --> 
+
+</div>
+<!-- /page -->
+
+<div data-role="footer" data-position="fixed" data-tap-toggle="true" data-theme="a">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="index.html" data-prefetch="true" data-transition="none" data-icon="home">首页</a></li>
+      <li><a href="content.html" data-prefetch="true" data-transition="slide" data-icon="tag">温故知新</a></li>
+      <li><a href="personal.html" data-prefetch="true" data-transition="slide" data-icon="gear">我的信息</a></li>
+    </ul>
+  </div>
+  <!-- /navbar --> 
+</div>
+<!-- /footer -->
+</body>
+</html>
