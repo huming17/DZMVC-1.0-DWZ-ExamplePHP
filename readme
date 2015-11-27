@@ -17,7 +17,7 @@
 
 三、SVN目录简单说明:
 
-+ parentController
++ folder
   - readme	 说明文件
   - admin.php	 后台入口文件
   - index.php    前台入口文件
